@@ -3,31 +3,59 @@ String[] captions; // here we declare an array of captions
 
 int numButtons;
 
-int counter;
-boolean lightsOn;
+
+PImage closedhand;
+PImage onehand; 
+PImage twohand;
+PImage threehand;
+PImage fourhand;
+PImage openhand;
+boolean[] pictures;
+
+int timeStart;
+//int timer;
 
 void setup(){
   size(800, 600);
   
-  numButtons = 3;
+  closedhand= loadImage("closedhand.jpg");
+  onehand= loadImage("onehand .jpg");
+  twohand= loadImage("twohand.jpg");
+  threehand= loadImage("threehand.jpg");
+  fourhand= loadImage("fourhand.jpg");
+  openhand= loadImage("openhand.jpg");
+  
+  
+  
+  numButtons = 6;
   commandButtons = new Button[numButtons];
   captions = new String[numButtons];
   
-  // 0 - "click me" button
-  // 1 - reset button
+  pictures= new boolean[numButtons];
+  
+  // 0 - "0" button
+  // 1 - "1"
   // 2 - lights on/off button
   for(int i = 0; i<numButtons;i++){
-    commandButtons[i] = new Button(width/2, 50+55*i, 200, 50); // all buttons in center, stacked vertically
+    commandButtons[i] = new Button(100, 50+55*i, 200, 50); // all buttons in center, stacked vertically
   }
   
   //set colors besides default
-  commandButtons[0].setColor(#2968CB, #7CABF5);
-  commandButtons[2].setColor(#3DB7B4, #53F2EE);
+  //commandButtons[0].setColor(#678ECB, #043DD3);
+  //commandButtons[1].setColor(#CB0C29, #AA0921);
+  //commandButtons[2].setColor(#3DB7B4, #0D6462);
+  //commandButtons[3].setColor(#58EAE2, #4DD3CB);
+  //commandButtons[4].setColor(#AA98EA, #8470C9);
+  //commandButtons[5].setColor(#D1782E, #F08833);
   
   // fill caption array
-  captions[0] = "Click me!";
-  captions[1] = "Reset";
-  captions[2] = " ";
+  captions[0] = "0";
+  captions[1] = "1";
+  captions[2] = "2";
+  captions[3] = "3";
+  captions[4] = "4";
+  captions[5] = "5";
+  
   //set Caption besides default blank using the array of captions
   for(int i = 0; i<numButtons;i++){
    commandButtons[i].setCaption(captions[i]); //uses default size and color for caption 
@@ -40,34 +68,102 @@ void setup(){
   
  
   
-  //initiate light on
-  lightsOn = true;
-  //initiate counter at 0
-  counter = 0;
+ 
 }
 
 void draw(){
-  if(lightsOn){
-    background(255);
-  }else{
-    background(0);
-  }
+  background(255);
   
   // display buttons
-  for(int i = 0; i<3;i++){
+  for(int i = 0; i<numButtons;i++){
     commandButtons[i].display();
   }
   
-  fill(100);
-  text(counter, 50, 50);
+ 
+  
+  imageMode(CENTER);
+  
+  if(pictures[0]){
+    //timeStart = millis();
+    runHelloSequence(timeStart);
+    //pictures[0]= false;
+    //timeStart = millis();
+    //timer = (millis()- timeStart)/1000;
+    //if((timer%2) == 0){
+    //  image(closedhand, 500, 400, 0.25 * closedhand.width, 0.25 * closedhand.height);
+    //}else {
+    //  image(openhand, 500, 400, 0.25 * openhand.width, 0.25 * openhand.height);
+    //}
+    
+  } 
+  
+  
+  
+  if(pictures[1]){
+  image(onehand, 500, 400, 0.25 * onehand.width, 0.25 * onehand.height);
+   }
+  
+  if(pictures[2]){
+  image(twohand, 500, 400, 0.25 * twohand.width, 0.25 * twohand.height);
+   }
+  
+  if(pictures[3]){
+  image(threehand, 500, 400, 0.25 * threehand.width, 0.25 * threehand.height);
+   }
+  
+  if(pictures[4]){
+  image(fourhand, 500, 400, 0.25 * fourhand.width, 0.25 * fourhand.height);
+   }
+  
+   if(pictures[5]){
+  image(openhand, 500, 400, 0.25 * openhand.width, 0.25 * openhand.height);
+   }
+  
 }
 
 void mousePressed(){
   if(commandButtons[0].mouseOver()){
-    counter++;
+    pictures[0] = !pictures[0];
+    timeStart = millis();
+    pictures[1] = false;
+    pictures[2] = false;
+    pictures[3] = false;
+    pictures[4] = false;
+    pictures[5] = false;
   }else if(commandButtons[1].mouseOver()){
-    counter = 0;
+    pictures[1] = !pictures[1];
+    pictures[0] = false;
+    pictures[2] = false;
+    pictures[3] = false;
+    pictures[4] = false;
+    pictures[5] = false;
   }else if(commandButtons[2].mouseOver()){
-    lightsOn = !lightsOn;
+    pictures[2] = !pictures[2];
+    pictures[0] = false;
+    pictures[1] = false;
+    pictures[3] = false;
+    pictures[4] = false;
+    pictures[5] = false;
+  }else if(commandButtons[3].mouseOver()){
+    pictures[3] = !pictures[3];
+    pictures[0] = false;
+    pictures[1] = false;
+    pictures[2] = false;
+    pictures[4] = false;
+    pictures[5] = false;
+  }else if(commandButtons[4].mouseOver()){
+     pictures[4] = !pictures[4];
+     pictures[0] = false;
+     pictures[1] = false;
+     pictures[2] = false;
+     pictures[3] = false;
+     pictures[5] = false;
+  }else if(commandButtons[5].mouseOver()){
+     pictures[5] = !pictures[5];
+     pictures[0] = false;
+     pictures[1] = false;
+     pictures[2] = false;
+     pictures[3] = false;
+     pictures[4] = false;
   }
 }

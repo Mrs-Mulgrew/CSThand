@@ -2,8 +2,8 @@
 int timer;
 
 void runHelloSequence(int timeStart){
-  //timeStart = millis();
-    timer = (millis()- timeStart)/1000;
+
+    timer = (millis()- timeStart)/500;
     
     println(timeStart);
     if((timer%2) == 0){

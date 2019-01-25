@@ -167,6 +167,10 @@ void mousePressed(){
   if(commandButtons[0].mouseOver()){
     port.write('0');//first finger at 0 degrees
     port.write('2');//second finger at 0 degrees
+    port.write('4');//thrid finger at 0 degrees 
+    port.write('6');//fourth finger at 0 degrees
+    port.write('8');//fifth finger at 0 degrees
+    
     
     pictures[0] = !pictures[0];
     //timeStart = millis();
@@ -185,6 +189,9 @@ void mousePressed(){
     pictures[1] = !pictures[1];
     port.write('1');// first at 180 degrees
     port.write('2');// second at 0 degrees
+    port.write('4');//third finger at 0 degrees
+    port.write('6');//fourth finger at 0 degrees
+    port.write('8');//fifth finger at 0 degrees
     
     pictures[0] = false;
     pictures[2] = false;

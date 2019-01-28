@@ -187,10 +187,10 @@ void mousePressed(){
   }
   else if(commandButtons[1].mouseOver()){
     pictures[1] = !pictures[1];
-    port.write('1');// first at 180 degrees
+    port.write('0');// first at 180 degrees
     port.write('2');// second at 0 degrees
     port.write('4');//third finger at 0 degrees
-    port.write('6');//fourth finger at 0 degrees
+    port.write('7');//fourth finger at 0 degrees
     port.write('8');//fifth finger at 0 degrees
     
     pictures[0] = false;
@@ -207,10 +207,10 @@ void mousePressed(){
   }
   else if(commandButtons[2].mouseOver()){
     pictures[2] = !pictures[2];
-    port.write('1');// first at 180 degrees
-    port.write('3');// second at 180 degrees
-    port.write('4');//third finger at 0 degrees
-    port.write('6');//fourth finger at 0 degrees
+    port.write('0');// first at 180 degrees
+    port.write('2');// second at 180 degrees
+    port.write('5');//third finger at 0 degrees
+    port.write('7');//fourth finger at 0 degrees
     port.write('8');//fifth finger at 0 degrees
     
     pictures[0] = false;
@@ -226,10 +226,10 @@ void mousePressed(){
   }
   else if(commandButtons[3].mouseOver()){
     pictures[3] = !pictures[3];
-    port.write('1');// first at 180 degrees
+    port.write('0');// first at 0 degrees
     port.write('3');// second at 180 degrees
     port.write('5');//third finger at 180 degrees
-    port.write('6');//fourth finger at 0 degrees
+    port.write('7');//fourth finger at 180 degrees
     port.write('8');//fifth finger at 0 degrees
     
     
@@ -286,6 +286,8 @@ void mousePressed(){
   else if(commandButtons[6].mouseOver()){
      pictures[6] = !pictures[6];
      timeStart = millis();
+     
+     
      pictures[0] = false;
      pictures[1] = false;
      pictures[2] = false;
@@ -313,6 +315,13 @@ void mousePressed(){
   }
    else if(commandButtons[8].mouseOver()){
      pictures[8] = !pictures[8];
+    port.write('1');// first at 0 degrees
+    port.write('2');// second at 0 degrees
+    port.write('4');//third finger at 0 degrees
+    port.write('6');//fourth finger at 0 degrees
+    port.write('8');//fifth finger at 0 degrees
+     
+     
      pictures[0] = false;
      pictures[1] = false;
      pictures[2] = false;
@@ -326,6 +335,12 @@ void mousePressed(){
    }
    else if(commandButtons[9].mouseOver()){
      pictures[9] = !pictures[9];
+     port.write('1');// first at 180 degrees
+    port.write('2');// second at 0 degrees
+    port.write('4');//third finger at 0 degrees
+    port.write('7');//fourth finger at 180 degrees
+    port.write('8');//fifth finger at 0 degrees
+     
      pictures[0] = false;
      pictures[1] = false;
      pictures[2] = false;
@@ -339,6 +354,13 @@ void mousePressed(){
    }
     else if(commandButtons[10].mouseOver()){
      pictures[10] = !pictures[10];
+    port.write('1');// first at 180 degrees
+    port.write('2');// second at 0 degrees
+    port.write('4');//third finger at 0 degrees
+    port.write('6');//fourth finger at 0 degrees
+    port.write('9');//fifth finger at 180 degrees
+     
+     
      pictures[0] = false;
      pictures[1] = false;
      pictures[2] = false;

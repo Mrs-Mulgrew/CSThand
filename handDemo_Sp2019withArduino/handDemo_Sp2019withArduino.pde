@@ -114,33 +114,33 @@ void draw(){
   
   
   
-  if(pictures[0]){
+  if(pictures[0]){// fist
     image(closedhand, 500, 400, 0.25 * closedhand.width, 0.25 * closedhand.height);
    }
   
-  if(pictures[1]){
+  if(pictures[1]){//index up
   image(onehand, 500, 400, 0.25 * onehand.width, 0.25 * onehand.height);
    }
   
-  if(pictures[2]){
+  if(pictures[2]){//index and ring up 
   image(twohand, 500, 400, 0.25 * twohand.width, 0.25 * twohand.height);
    }
   
-  if(pictures[3]){
+  if(pictures[3]){//index, middle, and ring up 
   image(threehand, 500, 400, 0.25 * threehand.width, 0.25 * threehand.height);
    }
   
-   if(pictures[4]){
+   if(pictures[4]){//index, middle, pinky and ring up 
   image(fourhand, 500, 400, 0.25 * fourhand.width, 0.25 * fourhand.height);
    }
-    if(pictures[5]){
+    if(pictures[5]){// all fingers up 
       image(openhand, 500, 400, 0.25 * openhand.width, 0.25 * openhand.height);
    }
   
-  if(pictures[6]){
+  if(pictures[6]){//all fingers up  hello
     runHelloSequence(timeStart); 
   } 
-  if(pictures[7]){
+  if(pictures[7]){//random: all fingers, no fingers, two fingers
     if(rps == 0){
       image(closedhand, 500, 400, 0.25 * closedhand.width, 0.25 * closedhand.height); 
     }
@@ -152,13 +152,13 @@ void draw(){
     }
   }
   
-  if(pictures[8]){
+  if(pictures[8]){// pinky finger up 
       image(pinkypromise, 500, 400, 0.25 * pinkypromise.width, 0.25 * pinkypromise.height);
    }
-  if(pictures[9]){
+  if(pictures[9]){// pinky index and thumb finger up 
       image(rockandroll, 500, 400, 0.25 * rockandroll.width, 0.25 * rockandroll.height);
    }
-   if(pictures[10]){
+   if(pictures[10]){//pinky and thumb finger up
       image(shaka, 500, 400, 0.25 * shaka.width, 0.25 * shaka.height);
    }
 }
